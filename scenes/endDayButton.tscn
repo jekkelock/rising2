@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b378rodrs7228"]
+
+[ext_resource type="Script" uid="uid://e0olxt2hhmfi" path="res://endDayButton.gd" id="1_gunqw"]
+
+[node name="Control" type="Control" unique_id=1043603760]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gunqw")
+
+[node name="endDayButton" type="Button" parent="." unique_id=47900130]
+layout_mode = 0
+offset_left = 988.0
+offset_top = 500.0
+offset_right = 1088.0
+offset_bottom = 600.0
+text = "END DAY"
+
+[connection signal="pressed" from="endDayButton" to="." method="_on_end_day_button_pressed"]

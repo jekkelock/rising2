@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://20icygxqxj15"]
+
+[ext_resource type="Script" uid="uid://ds6caya0ya7my" path="res://scenes/resourceBar.gd" id="1_d5gjr"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ln7t6"]
+size = Vector2(32, 32)
+
+[node name="ResourceBar" type="Control" unique_id=1756638143]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d5gjr")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=500433559]
+layout_mode = 0
+offset_left = 691.0
+offset_right = 1152.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=242045698]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/HBoxContainer" unique_id=514128349]
+layout_mode = 2
+
+[node name="DayLabel" type="Label" parent="PanelContainer/HBoxContainer" unique_id=107517914]
+layout_mode = 2
+text = "Day:00"
+
+[node name="VSeparator2" type="VSeparator" parent="PanelContainer/HBoxContainer" unique_id=1459723589]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer" unique_id=1567308598]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_ln7t6")
+
+[node name="WoodLabel" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1164122996]
+layout_mode = 2
+text = "0000"
+
+[node name="VSeparator3" type="VSeparator" parent="PanelContainer/HBoxContainer" unique_id=972214061]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/HBoxContainer" unique_id=91711007]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_ln7t6")
+
+[node name="StoneLabel" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1488508877]
+layout_mode = 2
+text = "0000"
+
+[node name="VSeparator4" type="VSeparator" parent="PanelContainer/HBoxContainer" unique_id=660096419]
+layout_mode = 2

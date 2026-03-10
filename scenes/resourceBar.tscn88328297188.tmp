@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://20icygxqxj15"]
+
+[ext_resource type="Script" uid="uid://ds6caya0ya7my" path="res://scenes/resourceBar.gd" id="1_d5gjr"]
+
+[node name="ResourceBar" type="Control" unique_id=1756638143]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d5gjr")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=500433559]
+layout_mode = 0
+offset_left = 691.0
+offset_right = 1152.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=833288983]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=242045698]
+layout_mode = 2
+
+[node name="DayLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=107517914]
+layout_mode = 2
+text = "Day:00"
