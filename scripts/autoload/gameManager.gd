@@ -1,13 +1,20 @@
 extends Node
 
 var game_day = 1
-
+var all_cities: Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.day_ended.connect(_on_day_ended)
+	pass
 
+func register_city(city: Node) -> void:
+	all_cities.append(city)
 
-func _on_day_ended() -> void:
+func unregister_city(city: Node) -> void:
+	all_cities.erase(city)
+
+func end_day() -> void:
 	game_day += 1
-	print("Game Manager Day ended")
+	for city in all_cities:
+		city.process_turn()
+	SignalBus.day_ended.emit()

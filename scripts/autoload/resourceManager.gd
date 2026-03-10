@@ -16,9 +16,9 @@ func _ready() -> void:
 func _on_day_ended() -> void:
 	amounts[ResourceType.WOOD] += day_wood
 	amounts[ResourceType.STONE] += day_stone
+	print(day_wood)
 	day_wood = 0
 	day_stone = 0
-	print(day_wood)
 	print(amounts[ResourceType.WOOD])
 
 func spend(cost: Dictionary) -> bool:
