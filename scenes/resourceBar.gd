@@ -20,4 +20,20 @@ func update() -> void:
 	wood_label.text = str(ResourceManager.get_amount(ResourceManager.ResourceType.WOOD))
 	stone_label.text = str(ResourceManager.get_amount(ResourceManager.ResourceType.STONE))
 	
-	
+
+func add_resources_label(resource, amount) -> void:
+	var label = Label.new()
+	if resource == ResourceManager.ResourceType.WOOD:
+		label.position = Vector2(800, 40)
+	elif resource == ResourceManager.ResourceType.STONE:
+		label.position = Vector2(880, 40)
+	label.text = "+" + str(amount)
+	label.modulate.a = 0
+	label.z_index = -1
+	add_child(label)
+	var tween = create_tween()
+	tween.tween_property(label, "modulate:a", 1.0, 0.5)
+	tween.tween_interval(0.5)
+	tween.tween_property(label, "position:y", 0, 0.5)
+	update()
+	tween.tween_callback(func(): label.queue_free())
