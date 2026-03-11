@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://b26g6mw3hmdw1"]
+
+[ext_resource type="Script" uid="uid://5ympfjnesqke" path="res://scenes/panel.gd" id="1_uucep"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h60rw"]
+size = Vector2(50, 50)
+
+[node name="Panels" type="Control" unique_id=1253453159]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+script = ExtResource("1_uucep")
+
+[node name="Panel" type="Panel" parent="." unique_id=1078487173]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 80.0
+offset_right = 350.0
+offset_bottom = 580.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1051700620]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 200.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=480550702]
+layout_mode = 2
+text = "cityName"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=1044501274]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer/MarginContainer" unique_id=1979084688]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=494603683]
+custom_minimum_size = Vector2(128, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer" unique_id=214826325]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer/HBoxContainer" unique_id=1896818638]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("PlaceholderTexture2D_h60rw")
+stretch_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer/HBoxContainer" unique_id=396711826]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer/HBoxContainer" unique_id=1735339939]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "name1"
+horizontal_alignment = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=1167838923]
+custom_minimum_size = Vector2(128, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer2" unique_id=1391574223]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer2/HBoxContainer" unique_id=490082207]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("PlaceholderTexture2D_h60rw")
+stretch_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer2/HBoxContainer" unique_id=497433461]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer2/HBoxContainer" unique_id=1325831747]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "name2"
+horizontal_alignment = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=237786913]
+custom_minimum_size = Vector2(128, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer3" unique_id=1066925486]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer3/HBoxContainer" unique_id=611829147]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("PlaceholderTexture2D_h60rw")
+stretch_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer3/HBoxContainer" unique_id=1955098829]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer3/HBoxContainer" unique_id=1112786520]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "name3"
+horizontal_alignment = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=1300777712]
+custom_minimum_size = Vector2(128, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer4" unique_id=135164499]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer4/HBoxContainer" unique_id=1357873695]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("PlaceholderTexture2D_h60rw")
+stretch_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer4/HBoxContainer" unique_id=1358763933]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer4/HBoxContainer" unique_id=1290308463]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "name4"
+horizontal_alignment = 2
+
+[node name="PanelContainer5" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=1609652399]
+custom_minimum_size = Vector2(128, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer5" unique_id=1180992877]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer5/HBoxContainer" unique_id=1401890420]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("PlaceholderTexture2D_h60rw")
+stretch_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer5/HBoxContainer" unique_id=136276840]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer5/HBoxContainer" unique_id=632318116]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "name5"
+horizontal_alignment = 2
+
+[node name="PanelContainer6" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=124760371]
+custom_minimum_size = Vector2(128, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer6" unique_id=1200413525]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer6/HBoxContainer" unique_id=1841173069]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("PlaceholderTexture2D_h60rw")
+stretch_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer6/HBoxContainer" unique_id=1814343967]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer6/HBoxContainer" unique_id=1223001497]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "name6"
+horizontal_alignment = 2
