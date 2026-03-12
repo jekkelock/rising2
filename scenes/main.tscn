@@ -2,17 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://cu1k5n00kj737" path="res://scenes/map.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://20icygxqxj15" path="res://scenes/resourceBar.tscn" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://bninbu63wwda" path="res://scenes/city.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b26g6mw3hmdw1" path="res://scenes/panels.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b378rodrs7228" path="res://scenes/endDayButton.tscn" id="3_sugp2"]
 
 [node name="Main" type="Node2D" unique_id=1093413123]
-
-[node name="Map" parent="." unique_id=256947113 instance=ExtResource("1_o5qli")]
-
-[node name="City" parent="." unique_id=1450390232 instance=ExtResource("2_jyhfs")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2090002411]
 
 [node name="ResourceBar" parent="CanvasLayer" unique_id=1756638143 instance=ExtResource("2_0wfyh")]
 
 [node name="Control" parent="CanvasLayer" unique_id=1043603760 instance=ExtResource("3_sugp2")]
+
+[node name="Panels" parent="CanvasLayer" unique_id=1253453159 instance=ExtResource("3_jyhfs")]
+
+[node name="Map" parent="." unique_id=256947113 instance=ExtResource("1_o5qli")]
+z_index = 1

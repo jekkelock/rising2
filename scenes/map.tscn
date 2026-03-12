@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://cu1k5n00kj737"]
 
+[ext_resource type="PackedScene" uid="uid://bninbu63wwda" path="res://scenes/city.tscn" id="1_4xfga"]
+
 [node name="Map" type="Node2D" unique_id=256947113]
+
+[node name="City" parent="." unique_id=1450390232 instance=ExtResource("1_4xfga")]
+position = Vector2(654, 373)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1082420879]
