@@ -5,6 +5,12 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h60rw"]
 size = Vector2(50, 50)
 
+[sub_resource type="LabelSettings" id="LabelSettings_uucep"]
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_ks6so"]
+font_size = 15
+
 [node name="Panels" type="Control" unique_id=1253453159]
 layout_mode = 3
 anchors_preset = 9
@@ -13,11 +19,14 @@ grow_vertical = 2
 script = ExtResource("1_uucep")
 
 [node name="Panel" type="Panel" parent="." unique_id=1078487173]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
 offset_left = 50.0
 offset_top = 80.0
 offset_right = 350.0
-offset_bottom = 580.0
+offset_bottom = -68.0
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1051700620]
 layout_mode = 0
@@ -39,155 +48,198 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=494603683]
+[node name="Building1" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=494603683]
 custom_minimum_size = Vector2(128, 50)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer" unique_id=214826325]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building1" unique_id=214826325]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer/HBoxContainer" unique_id=1896818638]
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building1/HBoxContainer" unique_id=1896818638]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = SubResource("PlaceholderTexture2D_h60rw")
 stretch_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer/HBoxContainer" unique_id=396711826]
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building1/HBoxContainer" unique_id=396711826]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Building1Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer/HBoxContainer" unique_id=1735339939]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building1/HBoxContainer" unique_id=1404072590]
+layout_mode = 2
+
+[node name="Building1Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building1/HBoxContainer/VBoxContainer" unique_id=1735339939]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "name1"
+label_settings = SubResource("LabelSettings_uucep")
 horizontal_alignment = 2
 
-[node name="PanelContainer2" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=1167838923]
+[node name="Buidling1Level" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building1/HBoxContainer/VBoxContainer" unique_id=1297060373]
+layout_mode = 2
+text = "LvL:"
+label_settings = SubResource("LabelSettings_ks6so")
+horizontal_alignment = 1
+
+[node name="Building2" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=1167838923]
 custom_minimum_size = Vector2(128, 50)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer2" unique_id=1391574223]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building2" unique_id=1391574223]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer2/HBoxContainer" unique_id=490082207]
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building2/HBoxContainer" unique_id=490082207]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = SubResource("PlaceholderTexture2D_h60rw")
 stretch_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer2/HBoxContainer" unique_id=497433461]
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building2/HBoxContainer" unique_id=497433461]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer2/HBoxContainer" unique_id=1325831747]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building2/HBoxContainer" unique_id=1325831747]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "name2"
 horizontal_alignment = 2
 
-[node name="PanelContainer3" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=237786913]
+[node name="Building3" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=237786913]
 custom_minimum_size = Vector2(128, 50)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer3" unique_id=1066925486]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building3" unique_id=1066925486]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer3/HBoxContainer" unique_id=611829147]
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building3/HBoxContainer" unique_id=611829147]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = SubResource("PlaceholderTexture2D_h60rw")
 stretch_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer3/HBoxContainer" unique_id=1955098829]
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building3/HBoxContainer" unique_id=1955098829]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer3/HBoxContainer" unique_id=1112786520]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building3/HBoxContainer" unique_id=1112786520]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "name3"
 horizontal_alignment = 2
 
-[node name="PanelContainer4" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=1300777712]
+[node name="Building4" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=1300777712]
 custom_minimum_size = Vector2(128, 50)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer4" unique_id=135164499]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building4" unique_id=135164499]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer4/HBoxContainer" unique_id=1357873695]
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building4/HBoxContainer" unique_id=1357873695]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = SubResource("PlaceholderTexture2D_h60rw")
 stretch_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer4/HBoxContainer" unique_id=1358763933]
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building4/HBoxContainer" unique_id=1358763933]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer4/HBoxContainer" unique_id=1290308463]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building4/HBoxContainer" unique_id=1290308463]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "name4"
 horizontal_alignment = 2
 
-[node name="PanelContainer5" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=1609652399]
+[node name="Building5" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=1609652399]
 custom_minimum_size = Vector2(128, 50)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer5" unique_id=1180992877]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building5" unique_id=1180992877]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer5/HBoxContainer" unique_id=1401890420]
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building5/HBoxContainer" unique_id=1401890420]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = SubResource("PlaceholderTexture2D_h60rw")
 stretch_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer5/HBoxContainer" unique_id=136276840]
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building5/HBoxContainer" unique_id=136276840]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer5/HBoxContainer" unique_id=632318116]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building5/HBoxContainer" unique_id=632318116]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "name5"
 horizontal_alignment = 2
 
-[node name="PanelContainer6" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=124760371]
+[node name="Building6" type="PanelContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer" unique_id=124760371]
 custom_minimum_size = Vector2(128, 50)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer6" unique_id=1200413525]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building6" unique_id=1200413525]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer6/HBoxContainer" unique_id=1841173069]
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building6/HBoxContainer" unique_id=1841173069]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = SubResource("PlaceholderTexture2D_h60rw")
 stretch_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer6/HBoxContainer" unique_id=1814343967]
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building6/HBoxContainer" unique_id=1814343967]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer6/HBoxContainer" unique_id=1223001497]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer/GridContainer/Building6/HBoxContainer" unique_id=1223001497]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "name6"
 horizontal_alignment = 2
 
-[node name="Button" type="Button" parent="." unique_id=572200525]
-layout_mode = 0
-offset_left = 456.0
-offset_top = 144.0
-offset_right = 520.0
-offset_bottom = 208.0
+[node name="Button" type="Button" parent="Panel" unique_id=1056040663]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_bottom = 29.0
+grow_horizontal = 0
+text = "X"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="InfoPanel" type="Panel" parent="." unique_id=1158883413]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 384.0
+offset_top = 152.0
+offset_right = 640.0
+offset_bottom = -112.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoPanel" unique_id=1672239524]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 384.0
+
+[node name="BuildingNameLabel" type="Label" parent="InfoPanel/VBoxContainer" unique_id=221446620]
+layout_mode = 2
+text = "buildingName"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="InfoPanel" unique_id=1914294674]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "X"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="InfoPanel/Button" to="." method="_on_info_close_button_pressed"]

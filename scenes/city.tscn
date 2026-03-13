@@ -5,6 +5,9 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bih7l"]
 size = Vector2(64, 64)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bih7l"]
+size = Vector2(64, 64)
+
 [node name="City" type="Node2D" unique_id=1450390232]
 z_index = 1
 script = ExtResource("1_bih7l")
@@ -12,10 +15,9 @@ script = ExtResource("1_bih7l")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=868479153]
 texture = SubResource("PlaceholderTexture2D_bih7l")
 
-[node name="Button" type="Button" parent="." unique_id=1536359819]
-offset_left = -31.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1410642862]
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=584624177]
+shape = SubResource("RectangleShape2D_bih7l")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

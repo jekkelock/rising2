@@ -4,10 +4,20 @@ const panel_width = 300
 var is_open: bool = false
 var current_city = null
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Panel.position.x = -panel_width
+	$InfoPanel.visible = false
 	SignalBus.city_selected.connect(_on_city_selected)
+	#WHAT BUILDING INFORMATION TO DFISPLAY
+	$Panel/VBoxContainer/MarginContainer/GridContainer/Building1.gui_input.connect(_on_building_clicked.bind("lumber_yard"))
+	$Panel/VBoxContainer/MarginContainer/GridContainer/Building2/HBoxContainer.gui_input.connect(_on_building_clicked.bind("quarry"))
+
+func _on_building_clicked(event: InputEvent, building_name: String) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		building_panel(building_name)
+
 
 func _on_city_selected(city: Node) -> void:
 	if is_open == true and current_city == city:
@@ -21,10 +31,12 @@ func open(city) -> void:
 	var tween = create_tween()
 	tween.tween_property($Panel, "position:x", 70 ,0.3)
 	tween.tween_property($Panel, "position:x", 50 ,0.2)
+	_populate()
 
 func close() -> void:
 	is_open = false
 	current_city = null
+	$InfoPanel.visible = false
 	var tween = create_tween()
 	tween.tween_property($Panel, "position:x", 70, 0.2)
 	tween.tween_property($Panel, "position:x", -panel_width, 0.2)
@@ -34,4 +46,22 @@ func _populate() -> void:
 		return
 	else:
 		$Panel/VBoxContainer/CityNameLabel.text = current_city.city_name
-		$Panel/VBoxContainer/MarginContainer/GridContainer/PanelContainer/HBoxContainer/Building1Label.text = "Lumber Yard"
+		$Panel/VBoxContainer/MarginContainer/GridContainer/Building1/HBoxContainer/VBoxContainer/Building1Label.text = "Lumber Yard"
+		$Panel/VBoxContainer/MarginContainer/GridContainer/Building1/HBoxContainer/VBoxContainer/Buidling1Level.text = "LvL: " + str(current_city.lumber_level)
+
+
+
+
+
+func building_panel(building_name: String) -> void:
+	$InfoPanel.visible = true
+	var info = current_city.building_info[building_name]
+	$InfoPanel/VBoxContainer/BuildingNameLabel.text = info["name"]
+
+
+func _on_close_button_pressed() -> void:
+	close()
+
+
+func _on_info_close_button_pressed() -> void:
+	$InfoPanel.visible = false

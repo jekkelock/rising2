@@ -21,4 +21,4 @@ func end_day() -> void:
 
 
 func select_city(city: Node) -> void:
-	SignalBus.city_selected.emit(city)	
+	SignalBus.city_selected.emit(city)
