@@ -54,8 +54,6 @@ func _populate() -> void:
 
 
 func building_panel(building_name: String) -> void:
-	$InfoPanel.visible = true
-	$InfoPanel.modulate.a = 0
 	open_info()
 	is_info_open = true
 	var info = current_city.building_info[building_name]
@@ -63,6 +61,9 @@ func building_panel(building_name: String) -> void:
 
 func open_info() -> void:
 	if is_info_open == true:
+		var tween1 = create_tween()
+		tween1.tween_property($InfoPanel, "modulate:a", 0, 0.3)
+		tween1.tween_callback(func(): is_info_open = false)
 		return
 	else:
 		$InfoPanel.visible = true
