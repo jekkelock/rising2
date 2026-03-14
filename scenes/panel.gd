@@ -2,6 +2,7 @@ extends Control
 
 const panel_width = 300
 var is_open: bool = false
+var is_info_open: bool = false
 var current_city = null
 
 
@@ -55,13 +56,33 @@ func _populate() -> void:
 
 func building_panel(building_name: String) -> void:
 	$InfoPanel.visible = true
+	$InfoPanel.modulate.a = 0
+	open_info()
+	is_info_open = true
 	var info = current_city.building_info[building_name]
 	$InfoPanel/VBoxContainer/BuildingNameLabel.text = info["name"]
 
+func open_info() -> void:
+	if is_info_open == true:
+		return
+	else:
+		$InfoPanel.visible = true
+		is_info_open = true
+	var tween = create_tween()
+	tween.tween_property($InfoPanel, "modulate:a", 1, 0.2)
+
+func close_info() -> void:
+	if is_info_open == false:
+		return
+	else:
+		is_info_open = false
+	var tween = create_tween()
+	tween.tween_property($InfoPanel, "modulate:a", 0, 0.3)
+	tween.tween_callback(func(): $InfoPanel.visible = false)
 
 func _on_close_button_pressed() -> void:
 	close()
 
 
 func _on_info_close_button_pressed() -> void:
-	$InfoPanel.visible = false
+	close_info()
