@@ -2,9 +2,8 @@ extends Control
 
 const panel_width = 300
 var is_open: bool = false
-var is_info_open: bool = false
 var current_city = null
-
+var is_info_open: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
