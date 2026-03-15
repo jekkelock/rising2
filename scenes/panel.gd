@@ -61,9 +61,9 @@ func building_panel(building_name: String) -> void:
 
 func open_info() -> void:
 	if is_info_open == true:
-		var tween1 = create_tween()
-		tween1.tween_property($InfoPanel, "modulate:a", 0, 0.3)
-		tween1.tween_callback(func(): is_info_open = false)
+		#var tween1 = create_tween()
+		#tween1.tween_property($InfoPanel, "modulate:a", 0, 0.3)
+		#tween1.tween_callback(func(): is_info_open = false)
 		return
 	else:
 		$InfoPanel.visible = true
