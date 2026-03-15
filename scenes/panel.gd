@@ -4,6 +4,7 @@ const panel_width = 300
 var is_open: bool = false
 var current_city = null
 var is_info_open: bool = false
+var current_info: String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +18,7 @@ func _ready() -> void:
 func _on_building_clicked(event: InputEvent, building_name: String) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		building_panel(building_name)
+		current_info = building_name
 
 
 func _on_city_selected(city: Node) -> void:
@@ -37,6 +39,7 @@ func close() -> void:
 	is_open = false
 	current_city = null
 	$InfoPanel.visible = false
+	current_info = ""
 	var tween = create_tween()
 	tween.tween_property($Panel, "position:x", 70, 0.2)
 	tween.tween_property($Panel, "position:x", -panel_width, 0.2)
@@ -58,6 +61,12 @@ func building_panel(building_name: String) -> void:
 	is_info_open = true
 	var info = current_city.building_info[building_name]
 	$InfoPanel/VBoxContainer/BuildingNameLabel.text = info["name"]
+	$InfoPanel/VBoxContainer/LevelLabel.text = "LEVEL:" + str(info["level"])
+	$InfoPanel/VBoxContainer/DescriptionLabel.text = info["description"]
+	$InfoPanel/VBoxContainer/StatsLabel.text = "Produces:" + str(info["level"] * 50)
+	$InfoPanel/VBoxContainer/UpgradeButton.text = str(info["level"] * 200)
+
+
 
 func open_info() -> void:
 	if is_info_open == true:
@@ -86,3 +95,9 @@ func _on_close_button_pressed() -> void:
 
 func _on_info_close_button_pressed() -> void:
 	close_info()
+
+
+func _on_upgrade_button_pressed() -> void:
+	var cost: int = current_city.building_info[current_info]["level"] * 100
+	ResourceManager.spend({ResourceManager.ResourceType.WOOD: cost})
+	current_city.building_info[current_info]["level"] += 1
