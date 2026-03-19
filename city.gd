@@ -49,6 +49,7 @@ func get_wood_production() -> int:
 		0: return 0
 		1: return 50
 		2: return 100
+		3: return 200
 		_: return 0
 
 func get_stone_produciton() -> int:
@@ -56,6 +57,7 @@ func get_stone_produciton() -> int:
 		0: return 0
 		1: return 20
 		2: return 40
+		3: return 80
 		_: return 0
 
 
