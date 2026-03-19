@@ -8,6 +8,7 @@ extends Control
 func _ready() -> void:
 	update()
 	SignalBus.day_ended.connect(_on_day_ended)
+	SignalBus.resources_changed.connect(update)
 
 
 
@@ -18,7 +19,7 @@ func _on_day_ended() -> void:
 func update() -> void:
 	day_label.text = "Day: " + str(GameManager.game_day)
 	wood_label.text = str(ResourceManager.get_amount(ResourceManager.ResourceType.WOOD))
-	stone_label.text = str(ResourceManager.get_amount(ResourceManager.ResourceType.STONE))
+	stone_label.text = str(ResourceManager.	get_amount(ResourceManager.ResourceType.STONE))
 	
 
 func add_resources_label(resource, amount) -> void:

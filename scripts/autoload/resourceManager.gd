@@ -21,13 +21,14 @@ func _on_day_ended() -> void:
 	day_stone = 0
 	print(amounts[ResourceType.WOOD])
 
-func spend(cost: Dictionary) -> bool:
-	if not can_afford(cost):
+
+func spend(cost: Dictionary) -> bool:      #OLD SPEND FUNCTION
+	if can_afford(cost) != true:
 		#SignalBus.notification.emit("Not enough resources!", 2.0)
 		return false
 	for resource in cost:
 		amounts[resource] -= cost[resource]
-	#SignalBus.resources_changed.emit()
+		SignalBus.resources_changed.emit()
 	return true
 
 func add_gains(gains: Dictionary) -> void:

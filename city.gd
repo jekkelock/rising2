@@ -1,7 +1,7 @@
 extends Node
 
-var lumber_level = 1
-var quarry_level = 0
+#var lumber_level = 2
+#var quarry_level = 0
 @export var city_name = "city1"
 
 var building_info: Dictionary = {
@@ -19,6 +19,22 @@ var building_info: Dictionary = {
 	}
 }
 
+var building_upgrade_cost: Dictionary = {
+	"lumber_yard": {
+		1: {
+			ResourceManager.ResourceType.WOOD: 100
+		},
+		2: {
+			ResourceManager.ResourceType.WOOD: 500,
+			ResourceManager.ResourceType.STONE: 150
+		},
+		3: {
+			ResourceManager.ResourceType.WOOD: 750,
+			ResourceManager.ResourceType.STONE: 300
+		}
+	}
+}
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,14 +45,14 @@ func process_turn():
 	ResourceManager.day_stone += get_stone_produciton()
 
 func get_wood_production() -> int:
-	match lumber_level:
+	match building_info["lumber_yard"]["level"]:
 		0: return 0
 		1: return 50
 		2: return 100
 		_: return 0
 
 func get_stone_produciton() -> int:
-	match quarry_level:
+	match building_info["quarry"]["level"]:
 		0: return 0
 		1: return 20
 		2: return 40
